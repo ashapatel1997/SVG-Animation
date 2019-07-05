@@ -1,0 +1,68 @@
+svg { /*account-balance icon*/ .account-balance-icon { stroke-dasharray: 50; stop-opacity: 0; stroke-dashoffset: 50; stroke-width: 1; animation: strokeFill 1s infinite; fill: black; fill-opacity: 0; }
+  /*hourglass icon*/ .hourglass { transform: rotate(0deg) scale(1); transform-origin: center center; animation: account-circle-animate 1s infinite; }
+  /*perm phone msg icon*/ .perm-phone-msg { transform-origin: center center; transform: rotate3d(0, 0, 1, 0deg) scale(0.6); animation: phone-msg-rotate 1s alternate infinite; }
+  /*color-fill*/ .color-fill { transform: rotate3d(0,0,1,10deg); transform-origin: center center; animation: fill-color-rotate 0.5s infinite; }
+  /*rotating stroke around circle*/ .fillStroke { stroke-dasharray: 400; stroke-dashoffset: 400; animation: fillStroke 2s infinite; }
+  /*menu icon*/ .menuIcon {
+    .rect { }
+    .rect1 { }
+    .rect2 { animation: growRect 1s alternate-reverse infinite; transform-origin: 25% 50%; transform: scale(0); width: 0px; }
+    .rect3 { }
+  }
+  /*right tick icon*/ .tickRight { stroke-dasharray: 60; stroke-dashoffset: 60; animation: fillStroke 2s infinite ease-in-out; }
+  /*stroke with text*/ .linePath { stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: fillStroke 2s infinite; }
+  .text { transform: scale(1); animation: textStroke 2s infinite; opacity: 0; transform: rotate(180deg); }
+  /*simple line stroke*/ .line-stroke { stroke: #000000; stroke-width: 2; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: fillStroke 2s linear infinite; }
+  /*"svg text" text */ .text-fill-stroke { font-size: 100px; font-family: Calibri; fill: white; stroke-width: 1; stroke: black; stroke-linejoin: round; stroke-dasharray: 400; stroke-dashoffset: 400; animation: textAnimate 1s linear infinite; }
+}
+
+
+/*account-balance icon animation*/
+@keyframes strokeFill{
+
+  100% { stroke-dashoffset: 0; fill-opacity: 1; stop-opacity: 0; }
+}
+
+/*hourglass icon animation*/
+@keyframes account-circle-animate{
+  25% { transform: rotate(10deg) scale(0.8); }
+  50% { transform: rotate(-10deg) scale(0.8); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+/*perm phone msg icon*/
+@keyframes phone-msg-rotate {
+  17% { transform: rotate3d(0, 0, 1, 30deg) scale(0.7); }
+  51% { transform: rotate3d(0, 0, -1, 30deg) scale(0.8); }
+  85% { transform: rotate3d( 0, 0, 1, 30deg) scale(0.9); }
+  100% { transform: rotate3d(0, 0, 1, 0deg) scale(1); }
+  
+}
+
+/*fill color icon*/
+@keyframes fill-color-rotate{
+  50% { transform: rotate3d(0,0,1,-10deg); }
+  100% { transform: rotate3d(0,0,1,10deg); }
+}
+
+
+/*"SVG" text animation*/ 
+@keyframes textStroke {
+  to { opacity: 5; transform: rotate(360deg); }
+}
+
+/*fill stroke animation*/
+@keyframes fillStroke {
+  to { stroke-dashoffset: 0; }
+}
+
+/*middle rectabngle in menu ison grow to full scale*/ 
+@keyframes growRect {
+ 
+  100% { transform: scale(1); width: 51px; }
+}
+
+/*"svg text" text animation*/
+@keyframes textAnimate {
+  100% { stroke-dashoffset: 0; fill: lightblue; }
+}
